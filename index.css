@@ -1,0 +1,613 @@
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif, cursive;
+    /* font-family: 'Macondo', cursive;   */
+    /* font-family: 'Indie Flower', cursive;  */
+    /* font-family: 'Artemis Deco', arial; */
+    /* font-family: 'Zen Loop', cursive; */
+    /* font-family: 'BIZ UDPGothic', sans-serif; */
+    margin: 0;
+    padding: 0;
+}
+/* START STYLE FOR HEADER */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:900");
+.page-wrapper {
+  width: 130px;
+  position: relative;
+  margin-left: 10%;
+}
+/* .d1{
+    font-family: Verdana, Geneva, Tahoma, sans-serif, cursive;
+}
+.t{
+    font-family: Verdana, Geneva, Tahoma, sans-serif, cursive;
+} */
+.t2{
+    margin-left: 37%;
+  text-align: center;
+    color: #FF6A00;
+}
+.button{
+    color: #000000;
+}
+.disk-wrapper {
+  overflow: hidden;
+  position: relative;
+  overflow: hidden;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+}
+.disk-wrapper .light-left,
+.disk-wrapper .light-right {
+  width: 25%;
+  height: 30%;
+  position: absolute;
+  background-color: #615951;
+  z-index: 20;
+}
+.disk-wrapper .light-left {
+    top: 12px;
+    left: 12px;
+    transform: rotate(-45deg);
+    clip-path: polygon(0 0, 100% 0, 66% 100%, 40% 100%);
+  }
+  .disk-wrapper .light-right {
+    clip-path: polygon(40% 0, 66% 0, 100% 100%, 0 100%);
+    right: 12px;
+    bottom: 12px;
+    transform: rotate(-45deg);
+  }
+.disk {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  background-color: #050608;
+  border-radius: 100%;
+  position: relative;
+  animation: circle 2.5s infinite linear;
+}
+.disk .half-circle-top {
+  top: 20px;
+  border: 2px solid #7a79782c;
+  border-top-left-radius: 72px;
+  /* 100px of height + 10px of border */
+  border-top-right-radius: 72px;
+  /* 100px of height + 10px of border */
+  border-bottom: 0;
+}
+.disk .half-circle-bottom {
+  bottom: 20px;
+  border: 2px solid #61595121;
+  border-bottom-left-radius: 72px;
+  /* 100px of height + 10px of border */
+  border-bottom-right-radius: 72px;
+  /* 100px of height + 10px of border */
+  border-top: 0;
+}
+.disk .half-circle-bottom,
+.disk .half-circle-top {
+  width: 40px;
+  height: 50px;
+  position: absolute;
+  background-color: #050608;
+}
+.disk .separator {
+  background-color: #050608;
+  position: absolute;
+  width: 50%;
+  height: 58px;
+  top: 36%;
+}
+.disk .inner-circle {
+  width: 40px;
+  height: 40px;
+  background-color: #ff7f44;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+.disk .inner-circle span {
+  color: #c13017;
+  font-weight: 900;
+  /* font-size: 5px; */
+}
+.disk .inner-circle .dot {
+  width: 5px;
+  height: 5px;
+  background-color: black;
+  border-radius: 100%;
+  margin: 5px;
+}
+
+.needle-wrapper {
+  position: absolute;
+  right: 0;
+}
+.needle-wrapper .base {
+  width: 20px;
+  height: 20px;
+  background-color: #d2ccc6;
+  /* position: relative;*/
+  border-radius: 3px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.needle-wrapper .base:after {
+  content: "";
+  border-radius: 100%;
+  background-color: #615951;
+  width: 10px;
+  height: 10px;
+}
+.needle-wrapper .lines {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 4;
+  position: relative;
+  top: -4px;
+}
+.needle-wrapper .lines div {
+  background-color: #d2ccc6;
+  border-radius: 3px;
+}
+.needle-wrapper .lines .vertical {
+  width: 5px;
+  height: 40px;
+}
+.needle-wrapper .lines .horizontal {
+  width: 33px;
+  height: 3px;
+  position: absolute;
+  left: -23px;
+  bottom: -6px;
+  transform: rotate(-20deg);
+}
+
+@keyframes circle {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*  */
+
+.header{
+    width: 100%;
+    color: rgb(0, 0, 0);
+    padding: 20px;
+    background: #FF6A00;
+    /* font-family: 'Macondo', cursive; */
+}
+.imeg{
+	background: url(./img/9.png);
+	width: 100px;
+	height: 100px;
+    display: flex;
+    margin-left: 20%;
+}
+.container{
+    max-width: 1140px;
+    padding: 0 15px;
+    margin: 0 auto; 
+    flex-direction: column;
+}
+.menu-item{
+    list-style: none;
+    margin-left: 10%;
+    list-style-type: disc;
+}
+.menu-link{
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    font-weight: bold;
+    bottom: 0;
+    /* font-family: 'Macondo', cursive; */
+}
+.menu-link {
+    /* reset */
+    color: black;
+    text-decoration: none;
+  
+    /* filling effect */
+    background-image: linear-gradient(to right, rgb(251, 255, 35) 50%, rgb(221, 222, 176) 50%);
+    background-size: 200% 3px;
+    background-repeat: no-repeat;
+    background-position: 100% 100%;
+    transition: background-position 0.3s;
+  }
+  
+  .menu-link:hover {
+    background-position: 0% 100%;
+  }
+  
+  li {
+    max-width: 480px;
+    margin: 0px auto;
+    font-size: 20px;
+  }
+/* END STYLE FOR HEADER */
+/* START STYLE FOR BANNER */
+.banner-section{
+    background: url(./img/banner4.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 100px 0;
+    margin: 0;
+}
+.banner-title, .banner-description{
+    text-align: center;
+    color: #f86d2d;
+}
+.banner-title{
+    font-size: 48px;
+    -webkit-text-stroke-width: 0.1px;
+    -webkit-text-stroke-color: #000000; 
+    /* font-family: 'Akshar', sans-serif; */
+    /* font-family: 'Indie Flower', cursive; */
+    font-family: 'Macondo', cursive;
+}
+.banner-description{
+    -webkit-text-stroke-width: 0.3px;
+    -webkit-text-stroke-color: #000000;
+}
+/* END STYLE FOR BANNER */
+/* START STYLE FOR CARDS */
+.cards-section{
+    padding: 50px 0;
+    text-align: center;
+}
+.cards-title{
+    text-align: center;
+    color:#FF6A00;
+    font-family: 'Macondo', cursive;
+}
+.card{
+    width: 25%;
+    /* box-shadow: сдвиг по Х, сдвиг по У, размытие, растяжение, цвет */
+    box-shadow: 0px 2px 7px 0px #f86d2d; 
+    margin-top: 25px;
+    padding: 25px;
+    text-align: center;
+    /* Изменения от Алены */
+    /* display: flex; */
+}
+.card-title, .card-text{
+    margin-bottom: 10px;
+    /* font-family: 'Akshar', sans-serif;  */
+}
+/* .card-text{
+    
+} */
+.card-button{
+    background: #FF6A00;
+    padding: 10px 70px;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    align-items: center;
+}
+
+/* Изменения от Алены */
+img{
+    max-width: 200px;
+    max-height: 200px;
+}
+/* Конец */
+
+.card-link{
+    color: white;
+    text-decoration: none;
+    align-content: stretch;
+    
+}
+.cards-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: stretch;
+    flex-wrap: wrap;
+}
+
+/* END STYLE FOR CARDS */
+/* START STYLE FOR FOOTER */
+.footer{
+    background: url(./img/foot.png);
+    background-size: cover;
+    padding: 100px 0;
+}
+.footer-information{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.icon{
+    margin-right: 50px;
+	padding: 10px;
+}
+.icons{
+    justify-content: flex-end;
+}
+.copyright{
+    color: #f6f2f1;
+	padding: 10px;
+	
+}
+/* END STYLE FOR FOOTER */
+
+/* Изменения от Алены */
+/* .img-1{
+    background: url("./records_min/1.jpg");
+    width: 200px;
+    height: 200px;
+}
+.img-1:hover{
+    background: url("./records_min/2.jpg");
+    width: 200px;
+    height: 200px;
+}
+
+.img-2{
+    background: url("./records_min/3.jpg");
+    width: 200px;
+    height: 200px;
+}
+.img-2:hover{
+    background: url("./records_min/4.jpg");
+    width: 200px;
+    height: 200px;
+}
+
+.img-3{
+    background: url("./records_min/5.jpg");
+    width: 200px;
+    height: 200px;
+}
+.img-3:hover{
+    background: url("./records_min/6.jpg");
+    width: 200px;
+    height: 200px;
+}
+
+.img-4{
+    background: url("./records_min/7.jpg");
+    width: 200px;
+    height: 200px;
+}
+.img-4:hover{
+    background: url("./records_min/8.jpg");
+    width: 200px;
+    height: 200px;
+}
+
+.img-5{
+    background: url("./records_min/9.jpg");
+    width: 200px;
+    height: 200px;
+}
+.img-5:hover{
+    background: url("./records_min/10.jpg");
+    width: 200px;
+    height: 200px;
+}
+
+.img-6{
+    background: url("./records_min/11.jpg");
+    width: 200px;
+    height: 200px;
+}
+.img-6:hover{
+    background: url("./records_min/12.jpg");
+    width: 200px;
+    height: 200px;
+}
+
+.img-7{
+    background: url("./records_min/13.jpg");
+    width: 200px;
+    height: 200px;
+}
+.img-7:hover{
+    background: url("./records_min/14.jpg");
+    width: 200px;
+    height: 200px;
+}
+.img-8{
+    background: url("./records_min/15.jpg");
+    width: 200px;
+    height: 200px;
+}
+.img-8:hover{
+    background: url("./records_min/16.jpg");
+    width: 200px;
+    height: 200px;
+}
+
+.img-9{
+    background: url("./records_min/17.jpg");
+    width: 200px;
+    height: 200px;
+}
+.img-9:hover{
+    background: url("./records_min/18.jpg");
+    width: 200px;
+    height: 200px;
+}
+
+.img-10{
+    background: url("./records_min/19.jpg");
+    width: 200px;
+    height: 200px;
+}
+.img-10:hover{
+    background: url("./records_min/20.jpg");
+    width: 200px;
+    height: 200px;
+}
+
+.img-11{
+    background: url("./records_min/21.jpg");
+    width: 200px;
+    height: 200px;
+}
+.img-11:hover{
+    background: url("./records_min/22.jpg");
+    width: 200px;
+    height: 200px;
+}
+
+.img-12{
+    background: url("./records_min/23.jpg");
+    width: 200px;
+    height: 200px;
+}
+.img-12:hover{
+    background: url("./records_min/24.jpg");
+    width: 200px;
+    height: 200px;
+}
+
+.img-13{
+    background: url("./records_min/25.jpg");
+    width: 200px;
+    height: 200px;
+}
+.img-13:hover{
+    background: url("./records_min/26.jpg");
+    width: 200px;
+    height: 200px;
+}
+
+.img-14{
+    background: url("./records_min/27.jpg");
+    width: 200px;
+    height: 200px;
+}
+.img-14:hover{
+    background: url("./records_min/28.jpg");
+    width: 200px;
+    height: 200px;
+}
+
+.img-15{
+    background: url("./records_min/29.jpg");
+    width: 200px;
+    height: 200px;
+}
+.img-15:hover{
+    background: url("./records_min/30.jpg");
+    width: 200px;
+    height: 200px;
+}
+
+.img-16{
+    background: url("./records_min/31.jpg");
+    width: 200px;
+    height: 200px;
+}
+.img-16:hover{
+    background: url("./records_min/32.jpg");
+    width: 200px;
+    height: 200px;
+}
+
+.img-17{
+    background: url("./records_min/33.jpg");
+    width: 200px;
+    height: 200px;
+}
+.img-17:hover{
+    background: url("./records_min/34.jpg");
+    width: 200px;
+    height: 200px;
+}
+
+.img-18{
+    background: url("./records_min/35.jpg");
+    width: 200px;
+    height: 200px;
+}
+.img-18:hover{
+    background: url("./records_min/36.jpg");
+    width: 200px;
+    height: 200px;
+}
+
+.img-19{
+    background: url("./records_min/37.jpg");
+    width: 200px;
+    height: 200px;
+}
+.img-19:hover{
+    background: url("./records_min/38.jpg");
+    width: 200px;
+    height: 200px;
+}
+
+.img-20{
+    background: url("./records_min/39.jpg");
+    width: 200px;
+    height: 200px;
+}
+.img-20:hover{
+    background: url("./records_min/40.jpg");
+    width: 200px;
+    height: 200px;
+}
+
+.img-21{
+    background: url("./records_min/41.jpg");
+    width: 200px;
+    height: 200px;
+}
+.img-21:hover{
+    background: url("./records_min/42.jpg");
+    width: 200px;
+    height: 200px;
+} */
+
+
+@media screen and (max-width: 850px) {
+    .header{
+        width: auto;
+    }
+    .container{
+        flex-direction: column;
+    }
+    
+    /* .header-menu{
+       
+    } */
+    .header-row{
+        display: flex;
+        justify-content: center;
+    }
+    .cards-row{
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .card, .img{
+        width: auto;
+    }
+    .search,.footer-search-input,.footer-search-button,.social-networks{
+        width: 100%;
+        margin-bottom: 0px;
+    }
+    .footer-row,.footer-search{
+        flex-wrap: wrap;
+    }
+    .footer-information, .icon{
+        flex-wrap: wrap;
+		bottom: auto;
+    }
+}

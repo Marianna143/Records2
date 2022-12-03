@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Various</title>
+    <SCRIPT type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></SCRIPT>
+    <SCRIPT type="text/javascript" src="/js/popup_img.js"></SCRIPT>
+</head>
+<style>
+@import url("https://fonts.googleapis.com/css?family=Montserrat:900");
+.page-wrapper {
+  width: 130px;
+  position: relative;
+  margin-left: 20%;
+}
+
+.disk-wrapper {
+  overflow: hidden;
+  position: relative;
+  overflow: hidden;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+}
+.disk-wrapper .light-left,
+.disk-wrapper .light-right {
+  width: 25%;
+  height: 30%;
+  position: absolute;
+  background-color: #615951;
+  z-index: 20;
+}
+.disk-wrapper .light-left {
+    top: 12px;
+    left: 12px;
+    transform: rotate(-45deg);
+    clip-path: polygon(0 0, 100% 0, 66% 100%, 40% 100%);
+  }
+  .disk-wrapper .light-right {
+    clip-path: polygon(40% 0, 66% 0, 100% 100%, 0 100%);
+    right: 12px;
+    bottom: 12px;
+    transform: rotate(-45deg);
+  }
+.disk {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  background-color: #050608;
+  border-radius: 100%;
+  position: relative;
+  animation: circle 2.5s infinite linear;
+}
+.disk .half-circle-top {
+  top: 20px;
+  border: 2px solid #7a79782c;
+  border-top-left-radius: 72px;
+  /* 100px of height + 10px of border */
+  border-top-right-radius: 72px;
+  /* 100px of height + 10px of border */
+  border-bottom: 0;
+}
+.disk .half-circle-bottom {
+  bottom: 20px;
+  border: 2px solid #61595121;
+  border-bottom-left-radius: 72px;
+  /* 100px of height + 10px of border */
+  border-bottom-right-radius: 72px;
+  /* 100px of height + 10px of border */
+  border-top: 0;
+}
+.disk .half-circle-bottom,
+.disk .half-circle-top {
+  width: 40px;
+  height: 50px;
+  position: absolute;
+  background-color: #050608;
+}
+.disk .separator {
+  background-color: #050608;
+  position: absolute;
+  width: 50%;
+  height: 58px;
+  top: 36%;
+}
+.disk .inner-circle {
+  width: 40px;
+  height: 40px;
+  background-color: #ff7f44;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+.disk .inner-circle span {
+  color: #c13017;
+  font-weight: 900;
+  /* font-size: 5px; */
+}
+.disk .inner-circle .dot {
+  width: 5px;
+  height: 5px;
+  background-color: black;
+  border-radius: 100%;
+  margin: 5px;
+}
+
+.needle-wrapper {
+  position: absolute;
+  right: 0;
+}
+.needle-wrapper .base {
+  width: 20px;
+  height: 20px;
+  background-color: #d2ccc6;
+  /* position: relative;*/
+  border-radius: 3px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.needle-wrapper .base:after {
+  content: "";
+  border-radius: 100%;
+  background-color: #615951;
+  width: 10px;
+  height: 10px;
+}
+.needle-wrapper .lines {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 4;
+  position: relative;
+  top: -4px;
+}
+.needle-wrapper .lines div {
+  background-color: #d2ccc6;
+  border-radius: 3px;
+}
+.needle-wrapper .lines .vertical {
+  width: 5px;
+  height: 40px;
+}
+.needle-wrapper .lines .horizontal {
+  width: 33px;
+  height: 3px;
+  position: absolute;
+  left: -23px;
+  bottom: -6px;
+  transform: rotate(-20deg);
+}
+
+@keyframes circle {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*  */
+*{
+  font-family: 'Akshar', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.text{
+	margin-bottom: 10px; 
+    text-align: center;
+	padding: 60px;
+}
+.price{
+	padding: 20px;
+	text-decoration: underline;
+}
+.banner{
+    width: 100%;
+    padding: 20px;
+    background: #FF6A00;
+}
+
+
+body {
+	margin:0;
+}
+
+.image {
+	margin:30px; 
+	float:left;
+	cursor:pointer;
+	max-height:350px;
+	justify-content: space-around;
+}
+
+.popup {
+	position: fixed;
+	height:100%;
+	width:100%;
+	top:0;
+	left:0;
+	display:none;
+	text-align:center;
+}
+
+.popup_bg {
+	background:rgba(0,0,0,0.4);
+	position:absolute;
+	z-index:1;
+	height:100%;
+	width:100%;
+}
+
+
+.popup_img {
+	position: relative;
+	margin:0 auto;
+	z-index:2;
+	max-height:94%;
+	max-width:94%;
+	margin:1% 0 0 0;
+	pointer-events: none;
+	display: flex;
+}
+
+.footer{
+    background: url(./img/3.png);
+	background-size: cover;
+    padding: 30px 0;
+	position: relative;
+	margin-top: 360px;
+}
+.footer-information{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.icon{
+    margin-right: 50px;
+	padding: 10px;
+}
+.copyright{
+    color: #f6f2f1;
+	padding: 10px;
+	
+}
+.r{
+    color: #FF6A00;
+}
+.menu-item{
+    list-style: none;
+    margin-left: 50%;
+    list-style-type: disc;
+}
+.menu-link{
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 170%;
+    bottom: 0;
+    font-family: 'Akshar', sans-serif;
+    
+}
+@media screen and (max-width: 850px) {
+    .banner{
+        width: auto;
+    }
+	
+	.popup, .image{
+		width: auto;
+		bottom: 0px;
+	}
+    .footer-information, .icon{
+        flex-wrap: wrap;
+		bottom: auto;
+    }
+}
+
+</style>
+<body bgcolor="#fff2e4">
+	<div class="banner">
+    <!-- <div class="imeg"></div> -->
+    <div class="page-wrapper">
+        <div class="needle-wrapper">
+          <div class="base"></div>
+          <div class="lines">
+            <div class="vertical"></div>
+            <div class="horizontal"></div>
+          </div>
+        </div>
+        <div class="disk-wrapper">
+            <div class="light-left"></div>
+            <div class="light-right"></div>
+          <div class="disk">
+            <div class="half-circle-top"></div>
+            <div class="half-circle-bottom"></div>
+            <div class="separator"></div>
+            <div class="inner-circle">
+              <div class=>♥️</div>
+            </div>
+          </div>
+        </div>
+        </div>
+			<ul class="menu">
+				<li class="menu-item">
+					<a class="menu-link" href="./index.html">Главная</a>
+				</li>
+			</ul>
+	</div>
+   <img src="./records/IMG_1744.jpg" class="image">
+   <img src="./records/IMG_1745.jpg" class="image">
+   <div class="text"><h2> <br>Various-The Original 50's And 60's-1975</h2>
+	<h3 class="price">цена: от 500 руб<h3>
+		<h4>Чтобы приобрести пластинку пишите на WhatsApp или Telegram:<h4 class="r"> +7(903)177-98-82</h4></h4>
+</div>
+
+
+
+
+<footer class="footer">
+	<div class="container">
+		<div class="footer-information">
+			<div class="copyright">This site was made by Marianna</div>
+			<div class="icons">
+				<a href="https://t.me/ffffzbd"><img src="./img/1 (1).png" alt="" class="icon"></a>
+				<a href="https://wa.me/79031779882"><img src="./img/2 (1).png" alt="" class="icon"></a>
+				<a href="https://instagram.com/__m.a.r.i.a.n.n.a_"><img src="./img/5 (2) (1).png" alt="" class="icon"></a>
+			</div>
+		</div>
+	</div>
+</footer>
+   
+</body>
+<script>
+   $(document).ready(function() { // Ждём загрузки страницы
+	
+	$(".image").click(function(){	// Событие клика на маленькое изображение
+	  	var img = $(this);	// Получаем изображение, на которое кликнули
+		var src = img.attr('src'); // Достаем из этого изображения путь до картинки
+		$("body").append("<div class='popup'>"+ //Добавляем в тело документа разметку всплывающего окна
+						 "<div class='popup_bg'></div>"+ // Блок, который будет служить фоном затемненным
+						 "<img src="+src+" class='popup_img' />"+ // Само увеличенное фото
+						 "</div>"); 
+		$(".popup").fadeIn(800); // Медленно выводим изображение
+		$(".popup_bg").click(function(){	// Событие клика на затемненный фон	   
+			$(".popup").fadeOut(800);	// Медленно убираем всплывающее окно
+			setTimeout(function() {	// Выставляем таймер
+			  $(".popup").remove(); // Удаляем разметку высплывающего окна
+			}, 800);
+		});
+	});
+});
+
+
+</script>
+</html>

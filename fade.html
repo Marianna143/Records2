@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+</head>
+<style>
+    img{
+    width: 200px;
+    height: 200px;
+    position:absolute;
+    object-fit: cover;
+}
+.cards-section{
+    padding: 50px 0;
+}
+.cards-title{
+    text-align: center;
+    color:#FF6A00
+}
+.card{
+    width: 25%;
+    /* box-shadow: сдвиг по Х, сдвиг по У, размытие, растяжение, цвет */
+    box-shadow: 0px 2px 7px 0px #FF6A00; 
+    margin-top: 25px;
+    padding: 25px;
+    text-align: center;
+}
+.card-title, .card-text{
+    margin-bottom: 10px;
+}
+.card-button{
+    background: #FF6A00;
+    padding: 10px 70px;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    align-items: center;
+}
+.card-link{
+    color: white;
+    text-decoration: none;
+    align-content: stretch;
+}
+.cards-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+</style>
+<body>
+    <section class="cards-section">
+        <div class="container">
+           <div class="cards-text">
+            </div> 
+           <div class="cards">
+                <div class="cards-row">
+                    <div class="card">
+                        <img class="img-1" src="./records/IMG_0809.jpg">
+                        <img class="img-2" src="./records/IMG_0808.jpg">
+                        <div class="card-body">
+                            <h3 class="card-title">Ace Cannon And His Alto Sax <br>Looking Back</h3>
+                            <div class="card-text">Jazz, Rock & Roll. <strong><em>1962</em></strong></div>
+                            <div class="card-button">
+                                <a class="card-link" href="#">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img class="img-3" src="./records/IMG_0806.jpg">
+                        <img class="img-4" src="./records/IMG_0807.jpg">
+                        <div class="card-body">
+                            <h3 class="card-title">Jimmy Smith <br> The Best Of Jimmy Smith</h3>
+                            <div class="card-text">Jass, Soul-Jazz.<strong><em>1967</em></strong> </div>
+                            <div class="card-button">
+                                <a class="card-link" href="#">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img class="img-5" src="./records/IMG_0804.jpg">
+                        <img class="img-6" src="./records/IMG_0805.jpg">
+                        <div class="card-body">
+                            <h3 class="card-title">Michael Jackson <br> Dangerous </h3>
+                            <div class="card-text">Electronic, Hip Hop, Rock, Funk / Soul. <strong><em>1991</em></strong> </div>
+                            <div class="card-button">
+                                <a class="card-link" href="#">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+           </div>
+        </div>
+    </section>
+</body>
+<script>
+    //При нажатии на картинку она плавно растовряется, при повторном нажатии - появляется
+    
+    $('.img-2').mousemove(function(){
+        $('.img-2').fadeOut();
+    });
+
+    $('.img-1').mousemove(function(){
+        $('.img-2').fadeIn();
+    });
+
+
+    $('.img-4').mousemove(function(){
+        $('.img-4').fadeOut();
+    });
+
+    $('.img-3').mousemove(function(){
+        $('.img-4').fadeIn();
+    });
+
+
+    $('.img-6').mousemove(function(){
+        $('.img-6').fadeOut();
+    });
+
+    $('.img-5').mousemove(function(){
+        $('.img-6').fadeIn();
+    });
+</script>
+</html>
